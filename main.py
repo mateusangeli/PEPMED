@@ -5,9 +5,7 @@ from qt_material import apply_stylesheet
        
         
         
-       
-
-
+    
 
 app = QApplication(sys.argv)
 apply_stylesheet(app, theme='dark_cyan.xml')

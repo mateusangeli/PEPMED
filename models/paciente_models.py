@@ -24,6 +24,14 @@ def addPaciente(paciente):
     conn = db.connect_db()
     cursor = conn.cursor()
     sql = """INSERT INTO Paciente (nome, sexo, idade, cpf, rg, telefone, plano) VALUES (?, ?, ?, ?, ?, ?, ?);"""
-    cursor.execute(sql, [paciente.nome, paciente.sexo, paciente.idade, paciente.cpf, paciente.cpf, paciente.rg, paciente.telefone, paciente.plano])
+    cursor.execute(sql, [paciente.nome, paciente.sexo, paciente.idade, paciente.cpf, paciente.rg, paciente.telefone, paciente.plano])
+    conn.commit()
+    conn.close()
+
+def delPaciente(id):
+    conn = db.connect_db()
+    cursor = conn.cursor()
+    sql = """DELETE FROM Paciente WHERE ID = ?"""
+    cursor.execute(sql, [id])
     conn.commit()
     conn.close()

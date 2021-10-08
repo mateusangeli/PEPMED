@@ -1,20 +1,10 @@
 from PyQt5.QtWidgets import QHBoxLayout, QMainWindow, QListWidgetItem, QWidget, QLabel
 from PyQt5 import uic
+from componentes.table_pacientes import TabelaPaciente
 
 from layouts.login import cadLogin
+from layouts.paciente import cadPaciente
 
-class CustomQWidget(QWidget):
-    def __init__(self, icon, text, parent = None):
-        super(CustomQWidget, self).__init__(parent)
-
-        label_icon = QLabel(icon)
-        label_text = QLabel(text)
-        layout = QHBoxLayout()
-        layout.addWidget(label_icon)
-        layout.addWidget(label_text)
-        layout.addWidget(label_icon)
-
-        self.setLayout(layout)
 
 
 class MainWindow(QMainWindow):
@@ -22,23 +12,6 @@ class MainWindow(QMainWindow):
         super().__init__()
         uic.loadUi("ui/mainwindow.ui", self)
 
-        item = QListWidgetItem(self.listWidget)
-        item_widget = CustomQWidget("*", "Pacientes")
-        item.setSizeHint(item_widget.sizeHint())
-        self.listWidget.insertItem(0, item)
-        self.listWidget.setItemWidget(item, item_widget)
-
-        item = QListWidgetItem(self.listWidget)
-        item_widget = CustomQWidget("@", "Médicos")
-        item.setSizeHint(item_widget.sizeHint())
-        self.listWidget.insertItem(1, item)
-        self.listWidget.setItemWidget(item, item_widget)
-
-        item = QListWidgetItem(self.listWidget)
-        item_widget = CustomQWidget("$", "Financeiro")
-        item.setSizeHint(item_widget.sizeHint())
-        self.listWidget.insertItem(2, item)
-        self.listWidget.setItemWidget(item, item_widget)
 
         self.listWidget.setCurrentRow(0)
 
@@ -47,6 +20,10 @@ class MainWindow(QMainWindow):
         self.cad_btn.clicked.connect(self.cadastro)
         self.entrar_btn.clicked.connect(self.iniciarSistema)
         self.janela_cadLogin = cadLogin(self)
+        self.carregaJanelas()
+
+    def carregaJanelas(self):
+        self.stackedWidget.insertWidget(0, cadPaciente())
 
     def iniciarSistema(self):
         self.stackedWidget_geral.setCurrentIndex(1)

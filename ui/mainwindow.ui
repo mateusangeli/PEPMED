@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1216</width>
-    <height>786</height>
+    <height>745</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -163,29 +163,85 @@
        </layout>
       </widget>
       <widget class="QWidget" name="page_2">
-       <layout class="QVBoxLayout" name="verticalLayout">
+       <layout class="QVBoxLayout" name="verticalLayout_9">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
+         <widget class="QListWidget" name="listWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16700</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="movement">
+           <enum>QListView::Static</enum>
+          </property>
+          <property name="flow">
+           <enum>QListView::LeftToRight</enum>
+          </property>
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="viewMode">
+           <enum>QListView::ListMode</enum>
+          </property>
           <item>
-           <widget class="QListWidget" name="listWidget">
-            <property name="minimumSize">
-             <size>
-              <width>200</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>200</width>
-              <height>16700</height>
-             </size>
-            </property>
-           </widget>
+           <property name="text">
+            <string>Pacientes</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../paciente.png</normaloff>../../paciente.png</iconset>
+           </property>
           </item>
           <item>
-           <widget class="QStackedWidget" name="stackedWidget_2"/>
+           <property name="text">
+            <string>Médicos</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../medico.png</normaloff>../../medico.png</iconset>
+           </property>
           </item>
-         </layout>
+          <item>
+           <property name="text">
+            <string>Financeiro</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../cifrao.png</normaloff>../../cifrao.png</iconset>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QStackedWidget" name="stackedWidget"/>
         </item>
        </layout>
       </widget>
