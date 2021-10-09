@@ -4,6 +4,7 @@ from componentes.table_pacientes import TabelaPaciente
 
 from layouts.login import cadLogin
 from layouts.paciente import cadPaciente
+from layouts.medico import cadMedico
 
 
 
@@ -24,6 +25,7 @@ class MainWindow(QMainWindow):
 
     def carregaJanelas(self):
         self.stackedWidget.insertWidget(0, cadPaciente())
+        self.stackedWidget.insertWidget(1, cadMedico())
 
     def iniciarSistema(self):
         self.stackedWidget_geral.setCurrentIndex(1)

@@ -6,45 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>882</width>
-    <height>723</height>
+    <width>876</width>
+    <height>647</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Cadastro de pacientes</string>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_2">
+  <property name="windowTitle">
+   <string>Cadastro de médicos</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Dados do cliente</string>
+      <string>Dados do médico</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="9" column="0">
-           <widget class="QComboBox" name="combo_plano">
-            <item>
-             <property name="text">
-              <string>Sim</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Não</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="10" column="1">
-           <widget class="QPushButton" name="excluir_btn">
-            <property name="text">
-             <string>Excluir</string>
-            </property>
-           </widget>
-          </item>
           <item row="3" column="1">
            <widget class="QLabel" name="label_5">
             <property name="text">
@@ -65,12 +50,8 @@
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
-           <widget class="QLabel" name="label_6">
-            <property name="text">
-             <string>Telefone</string>
-            </property>
-           </widget>
+          <item row="7" column="0">
+           <widget class="QLineEdit" name="idade"/>
           </item>
           <item row="1" column="1">
            <widget class="QLabel" name="label_4">
@@ -79,40 +60,30 @@
             </property>
            </widget>
           </item>
-          <item row="7" column="0">
-           <widget class="QLineEdit" name="idade"/>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLineEdit" name="nome"/>
-          </item>
-          <item row="4" column="0">
-           <widget class="QComboBox" name="combo_sexo">
-            <item>
-             <property name="text">
-              <string>Masculino</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Feminino</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_2">
+          <item row="6" column="1">
+           <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>Sexo</string>
+             <string>Telefone</string>
             </property>
            </widget>
           </item>
           <item row="7" column="1">
            <widget class="QLineEdit" name="fone"/>
           </item>
-          <item row="8" column="0">
-           <widget class="QLabel" name="label_7">
+          <item row="2" column="0">
+           <widget class="QLineEdit" name="nome"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_2">
             <property name="text">
-             <string>Plano de saúde</string>
+             <string>Área de atuação</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0">
+           <widget class="QPushButton" name="salvar_btn">
+            <property name="text">
+             <string>Salvar</string>
             </property>
            </widget>
           </item>
@@ -123,10 +94,13 @@
             </property>
            </widget>
           </item>
-          <item row="10" column="0">
-           <widget class="QPushButton" name="salvar_btn">
+          <item row="4" column="0">
+           <widget class="QLineEdit" name="area"/>
+          </item>
+          <item row="8" column="1">
+           <widget class="QPushButton" name="excluir_btn">
             <property name="text">
-             <string>Salvar</string>
+             <string>Excluir</string>
             </property>
            </widget>
           </item>
@@ -197,12 +171,7 @@
         </column>
         <column>
          <property name="text">
-          <string>Sexo</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Plano</string>
+          <string>Área</string>
          </property>
         </column>
        </widget>
