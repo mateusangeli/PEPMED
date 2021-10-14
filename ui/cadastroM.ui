@@ -68,7 +68,7 @@
            </widget>
           </item>
           <item row="7" column="1">
-           <widget class="QLineEdit" name="fone"/>
+           <widget class="QLineEdit" name="telefone"/>
           </item>
           <item row="2" column="0">
            <widget class="QLineEdit" name="nome"/>
@@ -156,11 +156,6 @@
         </column>
         <column>
          <property name="text">
-          <string>Telefone</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
           <string>CPF</string>
          </property>
         </column>
@@ -174,6 +169,11 @@
           <string>Área</string>
          </property>
         </column>
+        <column>
+         <property name="text">
+          <string>Telefone</string>
+         </property>
+        </column>
        </widget>
       </item>
      </layout>
@@ -181,6 +181,17 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>nome</tabstop>
+  <tabstop>cpf</tabstop>
+  <tabstop>area</tabstop>
+  <tabstop>rg</tabstop>
+  <tabstop>idade</tabstop>
+  <tabstop>telefone</tabstop>
+  <tabstop>salvar_btn</tabstop>
+  <tabstop>excluir_btn</tabstop>
+  <tabstop>tableWidget</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

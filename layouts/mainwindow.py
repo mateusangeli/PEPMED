@@ -13,10 +13,10 @@ class MainWindow(QMainWindow):
         super().__init__()
         uic.loadUi("ui/mainwindow.ui", self)
 
-
         self.listWidget.setCurrentRow(0)
-
         self.stackedWidget_geral.setCurrentIndex(0)
+        self.listWidget.setCurrentRow(0)
+        self.listWidget.currentRowChanged.connect(self.display)
         self.log_btn.clicked.connect(self.login)
         self.cad_btn.clicked.connect(self.cadastro)
         self.entrar_btn.clicked.connect(self.iniciarSistema)
@@ -29,10 +29,17 @@ class MainWindow(QMainWindow):
 
     def iniciarSistema(self):
         self.stackedWidget_geral.setCurrentIndex(1)
+        self.carregaJanelas()
             
     def cadastro(self):
         self.stackedWidget_geral.setCurrentIndex(2)
 
     def login(self):
         self.stackedWidget_geral.setCurrentIndex(0)
+
+    def display(self, index):
+        self.carregaJanelas()
+        self.stackedWidget.setCurrentIndex(index)
+        self.listWidget.setCurrentRow(index)
+
 

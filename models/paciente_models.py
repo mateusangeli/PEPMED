@@ -43,7 +43,7 @@ def editPaciente(paciente):
     conn = db.connect_db()
     cursor = conn.cursor()
     sql = """ UPDATE Paciente SET nome = ?, sexo = ?, idade = ?, cpf = ?, rg = ?, telefone = ?, plano = ? WHERE id = ?"""
-    cursor.execute(sql, [paciente.nome, paciente.sexo, paciente.idade, paciente.cpf, paciente.rg, paciente.telefone, paciente.plano])
+    cursor.execute(sql, [paciente.nome, paciente.sexo, paciente.idade, paciente.cpf, paciente.rg, paciente.telefone, paciente.plano, paciente.id])
     conn.commit()
     conn.close()
 

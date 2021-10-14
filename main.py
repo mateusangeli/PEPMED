@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import QApplication
 from layouts.mainwindow import MainWindow
 from qt_material import apply_stylesheet
-       
+        
         
         
     

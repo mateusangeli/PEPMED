@@ -212,6 +212,18 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>nome</tabstop>
+  <tabstop>cpf</tabstop>
+  <tabstop>rg</tabstop>
+  <tabstop>idade</tabstop>
+  <tabstop>fone</tabstop>
+  <tabstop>combo_sexo</tabstop>
+  <tabstop>combo_plano</tabstop>
+  <tabstop>salvar_btn</tabstop>
+  <tabstop>excluir_btn</tabstop>
+  <tabstop>tableWidget</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
