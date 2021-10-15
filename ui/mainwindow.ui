@@ -226,6 +226,20 @@
           </item>
           <item>
            <property name="text">
+            <string>Consulta</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../1469975.png</normaloff>../../1469975.png</iconset>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>Financeiro</string>
            </property>
            <property name="font">

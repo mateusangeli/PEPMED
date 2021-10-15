@@ -14,7 +14,7 @@ class cadMedico(QWidget):
         self.table = TabelaMedicos(self.tableWidget, self)
 
         self.salvar_btn.clicked.connect(self.salvarMedico)
-        self.excluir_btn.clicked.connect(self.excluir)
+        self.excluir_btn.clicked.connect(self.table.excluir)
         
 
     def carregaDados(self):
@@ -23,7 +23,11 @@ class cadMedico(QWidget):
     def salvarMedico(self):
         medico = self.verificaCampos()
         if (medico != None) and (self.medicoAtual == None):
-            self.add(medico)
+            self.table.add(medico)
+            self.limpaCampos()
+        else:
+            medico.id = self.medicoAtual.id
+            self.table.atualizar(medico)
             self.limpaCampos()
 
     def verificaCampos(self):
@@ -50,21 +54,13 @@ class cadMedico(QWidget):
         self.salvar_btn.setText("Atualizar")
         self.excluir_btn.setEnabled(True)
 
-
-    def add(self, medico):
-        MeModels.addMedico(medico)
-        self.carregaDados()
-
-    def excluir(self, medico):
-        MeModels.delMedico(medico)
-        self.carregaDados()        
-
     def limpaCampos(self):
         self.medicoAtual = None
         self.nome.setText("")
         self.idade.setText("")
         self.cpf.setText("")
         self.rg.setText("")
+        self.area.setText("")
         self.telefone.setText("")
         self.salvar_btn.setText("Salvar")
         self.excluir_btn.setEnabled(False)

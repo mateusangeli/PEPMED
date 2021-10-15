@@ -59,10 +59,17 @@ class TabelaMedicos():
         medico = MeModels.getMedico(id)
         self.janela.insereInfo(medico)
 
+    def add(self, medico):
+        MeModels.addMedico(medico)
+        self.carregaDados()
+        self.janela.limpaCampos()
+
     def atualizar(self, medico):
         MeModels.editMedico(medico)
         self.carregaDados()
+        self.janela.limpaCampos()
     
-    def excluir(self, medico):
-        MeModels.delMedico(medico.id)
+    def excluir(self):
+        MeModels.delMedico(self.janela.medicoAtual.id)
         self.carregaDados()
+        self.janela.limpaCampos()
