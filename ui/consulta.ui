@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>901</width>
-    <height>754</height>
+    <width>829</width>
+    <height>753</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -197,32 +197,29 @@
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="8" column="0">
+           <item row="6" column="0">
             <widget class="QLabel" name="label_15">
              <property name="text">
               <string>Valor</string>
              </property>
             </widget>
            </item>
-           <item row="3" column="0">
-            <widget class="QDateEdit" name="dateEdit"/>
-           </item>
            <item row="2" column="0">
             <widget class="QLabel" name="label_9">
              <property name="text">
-              <string>Data</string>
+              <string>Data e hora</string>
              </property>
             </widget>
            </item>
-           <item row="6" column="0">
+           <item row="4" column="0">
             <widget class="QLabel" name="label_10">
              <property name="text">
               <string>Observações adicionais</string>
              </property>
             </widget>
            </item>
-           <item row="10" column="0">
-            <widget class="QPushButton" name="pushButton_2">
+           <item row="8" column="0">
+            <widget class="QPushButton" name="salvar_consulta">
              <property name="text">
               <string>Marcar consulta</string>
              </property>
@@ -236,13 +233,10 @@
             </widget>
            </item>
            <item row="5" column="0">
-            <widget class="QTimeEdit" name="timeEdit"/>
-           </item>
-           <item row="7" column="0">
-            <widget class="QTextEdit" name="textEdit"/>
+            <widget class="QTextEdit" name="obs"/>
            </item>
            <item row="1" column="0">
-            <widget class="QComboBox" name="comboBox_3">
+            <widget class="QComboBox" name="combo_consulta">
              <item>
               <property name="text">
                <string>1° Consulta</string>
@@ -255,19 +249,15 @@
              </item>
             </widget>
            </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="label_11">
-             <property name="text">
-              <string>Hora</string>
-             </property>
-            </widget>
-           </item>
-           <item row="9" column="0">
-            <widget class="QLineEdit" name="lineEdit_7">
+           <item row="7" column="0">
+            <widget class="QLineEdit" name="valor">
              <property name="readOnly">
               <bool>true</bool>
              </property>
             </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QDateTimeEdit" name="data_consulta"/>
            </item>
           </layout>
          </item>
@@ -294,12 +284,7 @@
            </column>
            <column>
             <property name="text">
-             <string>Data</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Hora</string>
+             <string>Data e hora</string>
             </property>
            </column>
           </widget>
@@ -308,6 +293,13 @@
           <widget class="QPushButton" name="pushButton">
            <property name="text">
             <string>Cancelar consulta</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="excluir_btn">
+           <property name="text">
+            <string>Excluir consulta</string>
            </property>
           </widget>
          </item>

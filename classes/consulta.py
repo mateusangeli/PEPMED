@@ -1,8 +1,10 @@
 class Consulta:
-    def __init__ (self, id, tipo, data, hora, obs, valor):
+    def __init__ (self, id, tipo, data, obs, valor, paciente, medico):
         self.id = id
-        self.ntipo = tipo
+        self.tipo = tipo
         self.data = data
-        self.hora = hora
         self.obs = obs
         self.valor = valor
+        self.paciente = paciente
+        self.medico = medico
+    
