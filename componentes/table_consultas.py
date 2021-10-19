@@ -21,14 +21,20 @@ class TabelaConsulta():
     def _addRow(self, consulta):
         rowCount = self.tableWidget.rowCount()
         self.tableWidget.insertRow(rowCount)
+        id = QTableWidgetItem(str(consulta.id))
+        id.setTextAlignment(Qt.AlignCenter)
         paciente = QTableWidgetItem(consulta.paciente.nome)
         medico = QTableWidgetItem(consulta.medico.nome)
         data = QTableWidgetItem(consulta.data)
         data.setTextAlignment(Qt.AlignCenter)
+        area = QTableWidgetItem(consulta.medico.area)
+        area.setTextAlignment(Qt.AlignCenter)
 
-        self.tableWidget.setItem(rowCount, 0, paciente)
-        self.tableWidget.setItem(rowCount, 1, medico)
-        self.tableWidget.setItem(rowCount, 2, data)
+        self.tableWidget.setItem(rowCount, 0, id)
+        self.tableWidget.setItem(rowCount, 1, paciente)
+        self.tableWidget.setItem(rowCount, 2, medico)
+        self.tableWidget.setItem(rowCount, 3, area)
+        self.tableWidget.setItem(rowCount, 4, data)
 
     def configTable(self):
         self.tableWidget.verticalHeader().setVisible(False)
@@ -37,6 +43,7 @@ class TabelaConsulta():
             QHeaderView.Stretch)
         self.tableWidget.setEditTriggers(QTableWidget.NoEditTriggers)
         self.tableWidget.setSelectionBehavior(QTableWidget.SelectRows)
+        self.tableWidget.clicked.connect(self.clicado)
 
     def clicado(self):
         selected_row = self.tableWidget.currentRow()

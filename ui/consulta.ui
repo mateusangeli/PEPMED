@@ -121,7 +121,7 @@
       <item>
        <widget class="QGroupBox" name="groupBox_2">
         <property name="title">
-         <string>Informações do médico</string>
+         <string>Informações do médico </string>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
@@ -274,12 +274,22 @@
           <widget class="QTableWidget" name="tableWidget">
            <column>
             <property name="text">
+             <string>ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
              <string>Paciente</string>
             </property>
            </column>
            <column>
             <property name="text">
              <string>Médico</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Área</string>
             </property>
            </column>
            <column>

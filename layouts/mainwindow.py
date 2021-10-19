@@ -7,6 +7,7 @@ from layouts.login import cadLogin
 from layouts.paciente import cadPaciente
 from layouts.medico import cadMedico
 from layouts.consulta import novaConsulta
+from layouts.tela_consultas import telaConsultas
 
 
 
@@ -29,6 +30,7 @@ class MainWindow(QMainWindow):
         self.stackedWidget.insertWidget(0, cadPaciente())
         self.stackedWidget.insertWidget(1, cadMedico())
         self.stackedWidget.insertWidget(2, novaConsulta())
+        self.stackedWidget.insertWidget(3, telaConsultas(self))
 
     def iniciarSistema(self):
         self.stackedWidget_geral.setCurrentIndex(1)

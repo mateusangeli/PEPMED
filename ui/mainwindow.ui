@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1216</width>
-    <height>751</height>
+    <height>743</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -207,7 +207,7 @@
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>../../paciente.png</normaloff>../../paciente.png</iconset>
+             <normaloff>../icons/paciente.png</normaloff>../icons/paciente.png</iconset>
            </property>
           </item>
           <item>
@@ -221,7 +221,7 @@
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>../../medico.png</normaloff>../../medico.png</iconset>
+             <normaloff>../icons/medico.png</normaloff>../icons/medico.png</iconset>
            </property>
           </item>
           <item>
@@ -235,7 +235,7 @@
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>../../1469975.png</normaloff>../../1469975.png</iconset>
+             <normaloff>../icons/consulta.png</normaloff>../icons/consulta.png</iconset>
            </property>
           </item>
           <item>
@@ -249,7 +249,7 @@
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>../../cifrao.png</normaloff>../../cifrao.png</iconset>
+             <normaloff>../icons/cifrao.png</normaloff>../icons/cifrao.png</iconset>
            </property>
           </item>
          </widget>

@@ -69,7 +69,7 @@ class novaConsulta(QWidget):
     def verificaCampos(self):
         tipo = self.combo_consulta.currentText()
         data = self.data_consulta.dateTime().toString('dd/MM/yyyy hh:mm')
-        obs = self.obs.copy()
+        obs = self.obs.toPlainText()
         valor = self.valor.text()        
 
         
@@ -86,12 +86,12 @@ class novaConsulta(QWidget):
 
 
     def insereInfo(self, consulta):
-        self.consultaAtual = consulta
+        self.consultaAtual = consulta 
         if consulta.tipo == '1° Consulta':
             self.combo_consulta.setCurrentIndex(0)
         else:
             self.combo_consulta.setCurrentIndex(1)
-        self.obs.setText(consulta.obs)
+        self.obs.append(consulta.obs)
 
         self.salvar_consulta.setText("Atualizar consulta")
         self.excluir_btn.setEnabled(True)
