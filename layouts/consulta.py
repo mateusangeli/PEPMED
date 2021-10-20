@@ -1,3 +1,4 @@
+from os import truncate
 from PyQt5.QtWidgets import QWidget
 from classes.consulta import Consulta
 from componentes.table_consultas import TabelaConsulta
@@ -5,7 +6,9 @@ import models.medico_models as MeModels
 import models.paciente_models as PaModels
 import models.consulta_models as CoModels
 from PyQt5 import uic
-from PyQt5.QtCore import QDate
+from PyQt5.QtCore import QDate, QDateTime, Qt
+
+
 
 class novaConsulta(QWidget):
     def __init__(self):
@@ -25,6 +28,10 @@ class novaConsulta(QWidget):
         self.combo_paciente.currentIndexChanged.connect(self.index_changed_paciente)
         self.combo_medico.currentIndexChanged.connect(self.index_changed_medico)
         self.combo_consulta.currentIndexChanged.connect(self.valorTotal)
+        self.cancel_btn.clicked.connect(self.excluir)
+        self.valorTotal(0)
+        self.combo_paciente.setCurrentIndex(1)
+        self.combo_medico.setCurrentIndex(1)
 
     def carregaDadosConsulta(self):
         self.lista_consultas = CoModels.getConsultas()
@@ -61,9 +68,14 @@ class novaConsulta(QWidget):
 
     def salvarConsulta(self):
         consulta = self.verificaCampos()
-        if (consulta != None) and (self.consultaAtual == None):            
-            self.table.add(consulta)
-            self.limpaCampos()
+        if consulta != None:
+            if self.consultaAtual == None:            
+                self.table.add(consulta)
+                self.limpaCampos()
+            else:
+                consulta.id = self.consultaAtual.id
+                self.table.atualizar(consulta)
+                self.limpaCampos()
 
 
     def verificaCampos(self):
@@ -87,14 +99,46 @@ class novaConsulta(QWidget):
 
     def insereInfo(self, consulta):
         self.consultaAtual = consulta 
+        self.combo_medico.setEnabled(False)
+        self.id_medico.setEnabled(False)
+        self.fone_medico.setEnabled(False)
+        self.area_medico.setEnabled(False)
+        self.combo_paciente.setEnabled(False)
+        self.id_paciente.setEnabled(False)
+        self.idade_paciente.setEnabled(False)
+        self.fone_paciente.setEnabled(False)
+        self.combo_plano.setEnabled(False)
+        for m in self.lista_medicos:
+            if consulta.medico.id == m.id:
+                index = self.combo_medico.findText(m.nome, Qt.MatchFixedString)
+                if index >= 0:
+                    self.combo_medico.setCurrentIndex(index)
+                self.id_medico.setText(str(m.id))    
+                self.fone_medico.setText(m.telefone)
+                self.area_medico.setText(m.area)
+        for p in self.lista_pacientes:
+            if consulta.paciente.id == p.id:
+                index = self.combo_paciente.findText(p.nome, Qt.MatchFixedString)
+                if index >= 0:
+                    self.combo_paciente.setCurrentIndex(index)
+                self.id_paciente.setText(str(p.id))
+                self.fone_paciente.setText(p.telefone)
+                self.idade_paciente.setText(str(p.idade))
+                if consulta.paciente.plano == 'Sim':
+                    self.combo_plano.setCurrentIndex(0)
+                else:
+                    self.combo_plano.setCurrentIndex(1)
+
         if consulta.tipo == '1° Consulta':
             self.combo_consulta.setCurrentIndex(0)
         else:
             self.combo_consulta.setCurrentIndex(1)
-        self.obs.append(consulta.obs)
+        self.obs.setText(consulta.obs)
+        data = QDateTime.fromString(consulta.data, 'dd/MM/yyyy hh:mm')
+        self.data_consulta.setDateTime(data)
 
         self.salvar_consulta.setText("Atualizar consulta")
-        self.excluir_btn.setEnabled(True)
+        self.cancel_btn.setEnabled(True)
 
 
     def excluir(self):
@@ -104,10 +148,10 @@ class novaConsulta(QWidget):
     def limpaCampos(self):
         self.consultaAtual = None
         self.data_consulta.setDate(QDate.currentDate())
-        self.obs.setText("")
+        self.obs.clear()
         self.valor.setText("")
         self.salvar_consulta.setText("Salvar consulta")
-        self.excluir_btn.setEnabled(False)
+        self.cancel_btn.setEnabled(False)
 
 
         

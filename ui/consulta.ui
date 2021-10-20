@@ -300,16 +300,9 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="cancel_btn">
            <property name="text">
             <string>Cancelar consulta</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="excluir_btn">
-           <property name="text">
-            <string>Excluir consulta</string>
            </property>
           </widget>
          </item>

@@ -62,11 +62,8 @@ class MeuBotao(QWidget):
         self.w = None
         self.btn = QPushButton(self)
         self.btn.setText("")
-        
-        if type == TYPE['remove']:
-            self.typeDelete()
-        else:
-            self.typeInfo()
+
+        self.typeInfo()
 
         self.btn.setStyleSheet('QPushButton {background-color: #00FFFFFF; border:  none}')
         layout = QHBoxLayout()
@@ -79,15 +76,6 @@ class MeuBotao(QWidget):
         self.btn.clicked.connect(self.maisInfo)
         self.btn.setToolTip("Mais informações sobre a venda")
         self.btn.setIconSize(QSize(20,20))
-
-    def typeDelete(self):
-        self.btn.setIcon(QIcon("icons/delete.png"))
-        self.btn.clicked.connect(self.remover)
-        self.btn.setToolTip("Excluir venda")
-        self.btn.setIconSize(QSize(20,20))
-
-    def remover(self):
-        pass
 
     def maisInfo(self):
         self.w = InfoConsultas(self.consulta)

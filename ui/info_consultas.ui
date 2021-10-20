@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>611</width>
-    <height>487</height>
+    <height>755</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -43,86 +43,8 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <layout class="QGridLayout" name="gridLayout">
-        <item row="5" column="1">
-         <widget class="QLineEdit" name="lineEdit_5"/>
-        </item>
-        <item row="6" column="0">
-         <widget class="QLabel" name="label_9">
-          <property name="text">
-           <string>Observações</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="1">
-         <widget class="QComboBox" name="comboBox_2">
-          <item>
-           <property name="text">
-            <string>Sim</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Não</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="6" column="1">
-         <widget class="QLabel" name="label_8">
-          <property name="text">
-           <string>Plano de saúde</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="0">
-         <widget class="QComboBox" name="comboBox_3">
-          <item>
-           <property name="text">
-            <string>1° Consulta</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Retorno</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="8" column="0">
-         <widget class="QLabel" name="label_10">
-          <property name="text">
-           <string>Tipo da consulta</string>
-          </property>
-         </widget>
-        </item>
-        <item row="7" column="0">
-         <widget class="QTextEdit" name="textEdit"/>
-        </item>
-        <item row="8" column="1">
-         <widget class="QLabel" name="label_11">
-          <property name="text">
-           <string>Data e hora</string>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="1">
-         <widget class="QDateTimeEdit" name="dateTimeEdit"/>
-        </item>
-        <item row="3" column="1">
-         <widget class="QLineEdit" name="lineEdit_3"/>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>CPF</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QLineEdit" name="lineEdit"/>
-        </item>
         <item row="1" column="1">
-         <widget class="QLineEdit" name="lineEdit_2"/>
+         <widget class="QLineEdit" name="cpf"/>
         </item>
         <item row="2" column="0">
          <widget class="QLabel" name="label_4">
@@ -132,7 +54,7 @@
          </widget>
         </item>
         <item row="3" column="0">
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QComboBox" name="combo_sexo">
           <item>
            <property name="text">
             <string>Masculino</string>
@@ -152,13 +74,6 @@
           </property>
          </widget>
         </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>Idade</string>
-          </property>
-         </widget>
-        </item>
         <item row="2" column="1">
          <widget class="QLabel" name="label_5">
           <property name="text">
@@ -166,8 +81,15 @@
           </property>
          </widget>
         </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Idade</string>
+          </property>
+         </widget>
+        </item>
         <item row="5" column="0">
-         <widget class="QLineEdit" name="lineEdit_4"/>
+         <widget class="QLineEdit" name="idade"/>
         </item>
         <item row="0" column="0">
          <widget class="QLabel" name="label_2">
@@ -176,15 +98,115 @@
           </property>
          </widget>
         </item>
-        <item row="10" column="0">
+        <item row="12" column="0">
          <widget class="QLabel" name="label_12">
           <property name="text">
            <string>Valor</string>
           </property>
          </widget>
         </item>
+        <item row="13" column="0">
+         <widget class="QLineEdit" name="valor"/>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Plano de saúde</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QComboBox" name="combo_plano">
+          <item>
+           <property name="text">
+            <string>Sim</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Não</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLineEdit" name="telefone"/>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Observações</string>
+          </property>
+         </widget>
+        </item>
+        <item row="10" column="1">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Data e hora</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QTextEdit" name="obs"/>
+        </item>
         <item row="11" column="0">
-         <widget class="QLineEdit" name="lineEdit_6"/>
+         <widget class="QComboBox" name="combo_tipo">
+          <item>
+           <property name="text">
+            <string>1° Consulta</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Retorno</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="10" column="0">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Tipo da consulta</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="rg"/>
+        </item>
+        <item row="11" column="1">
+         <widget class="QDateTimeEdit" name="data_consulta"/>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>CPF</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="nome"/>
+        </item>
+        <item row="13" column="1">
+         <widget class="QLabel" name="label_13">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>../icons/foto cadastro.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
