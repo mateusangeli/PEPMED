@@ -30,8 +30,9 @@ class novaConsulta(QWidget):
         self.combo_consulta.currentIndexChanged.connect(self.valorTotal)
         self.cancel_btn.clicked.connect(self.excluir)
         self.valorTotal(0)
-        self.combo_paciente.setCurrentIndex(1)
-        self.combo_medico.setCurrentIndex(1)
+        self.combo_paciente.setCurrentIndex(0)
+        self.combo_medico.setCurrentIndex(0)
+        
 
     def carregaDadosConsulta(self):
         self.lista_consultas = CoModels.getConsultas()
@@ -51,20 +52,26 @@ class novaConsulta(QWidget):
         self.combo_paciente.addItems(lista_combopac)
 
     def index_changed_medico(self, i):
-        self.medicoAtual = self.lista_medicos[i]
-        self.id_medico.setText(str(self.medicoAtual.id))
-        self.fone_medico.setText(self.medicoAtual.telefone)
-        self.area_medico.setText(self.medicoAtual.area)
+        if i == 0:
+            self.limpaCamposMedico()
+        else:
+            self.medicoAtual = self.lista_medicos[i-1]
+            self.id_medico.setText(str(self.medicoAtual.id))
+            self.fone_medico.setText(self.medicoAtual.telefone)
+            self.area_medico.setText(self.medicoAtual.area)
 
     def index_changed_paciente(self, i):
-        self.pacienteAtual = self.lista_pacientes[i]
-        self.id_paciente.setText(str(self.pacienteAtual.id))
-        self.fone_paciente.setText(self.pacienteAtual.telefone)
-        self.idade_paciente.setText(str(self.pacienteAtual.idade))
-        if self.pacienteAtual.plano == 'Sim':
-            self.combo_plano.setCurrentIndex(0)
+        if i == 0:
+            self.limpaCamposPaciente()
         else:
-            self.combo_plano.setCurrentIndex(1)
+            self.pacienteAtual = self.lista_pacientes[i-1]
+            self.id_paciente.setText(str(self.pacienteAtual.id))
+            self.fone_paciente.setText(self.pacienteAtual.telefone)
+            self.idade_paciente.setText(str(self.pacienteAtual.idade))
+            if self.pacienteAtual.plano == 'Sim':
+                self.combo_plano.setCurrentIndex(0)
+            else:
+                self.combo_plano.setCurrentIndex(1)
 
     def salvarConsulta(self):
         consulta = self.verificaCampos()
@@ -91,8 +98,10 @@ class novaConsulta(QWidget):
 
     def valorTotal(self, tipo):
         if tipo == 0:
+            self.limparCamposConsulta()    
+        if tipo == 1:
             self.valor.setText("R$ 100,00")
-        else:
+        if tipo == 2:
             self.valor.setText("R$ 80,00")
     
 
@@ -100,13 +109,7 @@ class novaConsulta(QWidget):
     def insereInfo(self, consulta):
         self.consultaAtual = consulta 
         self.combo_medico.setEnabled(False)
-        self.id_medico.setEnabled(False)
-        self.fone_medico.setEnabled(False)
-        self.area_medico.setEnabled(False)
         self.combo_paciente.setEnabled(False)
-        self.id_paciente.setEnabled(False)
-        self.idade_paciente.setEnabled(False)
-        self.fone_paciente.setEnabled(False)
         self.combo_plano.setEnabled(False)
         for m in self.lista_medicos:
             if consulta.medico.id == m.id:
@@ -130,9 +133,9 @@ class novaConsulta(QWidget):
                     self.combo_plano.setCurrentIndex(1)
 
         if consulta.tipo == '1° Consulta':
-            self.combo_consulta.setCurrentIndex(0)
-        else:
             self.combo_consulta.setCurrentIndex(1)
+        else:
+            self.combo_consulta.setCurrentIndex(2)
         self.obs.setText(consulta.obs)
         data = QDateTime.fromString(consulta.data, 'dd/MM/yyyy hh:mm')
         self.data_consulta.setDateTime(data)
@@ -152,6 +155,21 @@ class novaConsulta(QWidget):
         self.valor.setText("")
         self.salvar_consulta.setText("Salvar consulta")
         self.cancel_btn.setEnabled(False)
+
+    def limpaCamposPaciente(self):
+        self.id_paciente.setText("")
+        self.fone_paciente.setText("")
+        self.idade_paciente.setText("")
+
+    def limpaCamposMedico(self):
+        self.id_medico.setText("")
+        self.fone_medico.setText("")
+        self.area_medico.setText("")
+
+    def limparCamposConsulta(self):
+        self.data_consulta.setDate(QDate.currentDate())
+        self.obs.clear()
+        self.valor.setText("")
 
 
         

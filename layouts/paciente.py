@@ -17,6 +17,7 @@ class cadPaciente(QWidget):
 
         self.salvar_btn.clicked.connect(self.salvarPaciente)
         self.excluir_btn.clicked.connect(self.excluir)
+        self.limpar_btn.clicked.connect(self.limpaCampos)
 
     def carregaDados(self):
         self.lista_pacientes = PaModels.getPacientes()
@@ -66,6 +67,7 @@ class cadPaciente(QWidget):
 
         self.salvar_btn.setText("Atualizar")
         self.excluir_btn.setEnabled(True)
+        self.limpar_btn.setEnabled(True)
         
 
     def add(self, paciente):
@@ -85,6 +87,7 @@ class cadPaciente(QWidget):
         self.fone.setText("")
         self.salvar_btn.setText("Salvar")
         self.excluir_btn.setEnabled(False)
+        self.limpar_btn.setEnabled(True)
 
 
 

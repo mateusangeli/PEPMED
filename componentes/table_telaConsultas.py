@@ -74,7 +74,7 @@ class MeuBotao(QWidget):
     def typeInfo(self):
         self.btn.setIcon(QIcon("icons/info.png"))
         self.btn.clicked.connect(self.maisInfo)
-        self.btn.setToolTip("Mais informações sobre a venda")
+        self.btn.setToolTip("Mais informações sobre a consulta")
         self.btn.setIconSize(QSize(20,20))
 
     def maisInfo(self):

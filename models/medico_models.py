@@ -1,5 +1,6 @@
 from classes.medico import Medico
 import models.database as db
+import sqlite3
 
 def getMedicos():
     conn = db.connect_db()
@@ -46,17 +47,25 @@ def addMedico(medico):
     conn.close()    
 
 def editMedico(medico):
-    conn = db.connect_db()
-    cursor = conn.cursor()
-    sql = """UPDATE Medicos SET nome = ?, idade = ?, cpf = ?, rg = ?, area = ?, telefone = ? WHERE id = ?"""
-    cursor.execute(sql, [medico.nome, medico.idade, medico.cpf, medico.rg, medico.area, medico.telefone, medico.id])
+    try:
+        conn = db.connect_db()
+        cursor = conn.cursor()
+        cursor.execute("PRAGMA foreign_keys = ON;")
+        sql = """UPDATE Medicos SET nome = ?, idade = ?, cpf = ?, rg = ?, area = ?, telefone = ? WHERE id = ?"""
+        cursor.execute(sql, [medico.nome, medico.idade, medico.cpf, medico.rg, medico.area, medico.telefone, medico.id])
+    except sqlite3.Error as er:
+        print(er)
     conn.commit()
     conn.close()
 
 def delMedico(id):
-    conn = db.connect_db()
-    cursor = conn.cursor()
-    sql = """DELETE FROM Medicos WHERE id = ?"""
-    cursor.execute(sql, [id])
+    try:
+        conn = db.connect_db()
+        cursor = conn.cursor()
+        cursor.execute("PRAGMA foreign_keys = ON;")
+        sql = """DELETE FROM Medicos WHERE id = ?"""
+        cursor.execute(sql, [id])
+    except sqlite3.Error as er:
+        print(er)
     conn.commit()
     conn.close()

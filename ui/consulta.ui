@@ -90,7 +90,13 @@
             </widget>
            </item>
            <item row="2" column="0">
-            <widget class="QComboBox" name="combo_paciente"/>
+            <widget class="QComboBox" name="combo_paciente">
+             <item>
+              <property name="text">
+               <string>Selecione....</string>
+              </property>
+             </item>
+            </widget>
            </item>
            <item row="7" column="0">
             <widget class="QLabel" name="label_4">
@@ -141,7 +147,13 @@
             </widget>
            </item>
            <item row="1" column="0">
-            <widget class="QComboBox" name="combo_medico"/>
+            <widget class="QComboBox" name="combo_medico">
+             <item>
+              <property name="text">
+               <string>Selecione....</string>
+              </property>
+             </item>
+            </widget>
            </item>
            <item row="0" column="0">
             <widget class="QLabel" name="label_5">
@@ -237,6 +249,11 @@
            </item>
            <item row="1" column="0">
             <widget class="QComboBox" name="combo_consulta">
+             <item>
+              <property name="text">
+               <string>Selecione....</string>
+              </property>
+             </item>
              <item>
               <property name="text">
                <string>1° Consulta</string>

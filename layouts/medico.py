@@ -15,6 +15,7 @@ class cadMedico(QWidget):
 
         self.salvar_btn.clicked.connect(self.salvarMedico)
         self.excluir_btn.clicked.connect(self.table.excluir)
+        self.limpar_btn.clicked.connect(self.limpaCampos)
         
 
     def carregaDados(self):
@@ -53,6 +54,7 @@ class cadMedico(QWidget):
 
         self.salvar_btn.setText("Atualizar")
         self.excluir_btn.setEnabled(True)
+        self.limpar_btn.setEnabled(True)
 
     def limpaCampos(self):
         self.medicoAtual = None
@@ -64,3 +66,4 @@ class cadMedico(QWidget):
         self.telefone.setText("")
         self.salvar_btn.setText("Salvar")
         self.excluir_btn.setEnabled(False)
+        self.limpar_btn.setEnabled(False)

@@ -24,6 +24,19 @@
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <layout class="QGridLayout" name="gridLayout">
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="cpf"/>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>RG</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="rg"/>
+          </item>
           <item row="9" column="0">
            <widget class="QComboBox" name="combo_plano">
             <item>
@@ -45,19 +58,6 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
-           <widget class="QLabel" name="label_5">
-            <property name="text">
-             <string>RG</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QLineEdit" name="rg"/>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLineEdit" name="cpf"/>
-          </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label">
             <property name="text">
@@ -65,25 +65,39 @@
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
-           <widget class="QLabel" name="label_6">
+          <item row="8" column="0">
+           <widget class="QLabel" name="label_7">
             <property name="text">
-             <string>Telefone</string>
+             <string>Plano de saúde</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="label_4">
+          <item row="10" column="0">
+           <widget class="QPushButton" name="salvar_btn">
             <property name="text">
-             <string>CPF</string>
+             <string>Salvar</string>
             </property>
            </widget>
           </item>
-          <item row="7" column="0">
-           <widget class="QLineEdit" name="idade"/>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Idade</string>
+            </property>
+           </widget>
           </item>
           <item row="2" column="0">
            <widget class="QLineEdit" name="nome"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Sexo</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QLineEdit" name="fone"/>
           </item>
           <item row="4" column="0">
            <widget class="QComboBox" name="combo_sexo">
@@ -99,34 +113,27 @@
             </item>
            </widget>
           </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_2">
+          <item row="7" column="0">
+           <widget class="QLineEdit" name="idade"/>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLabel" name="label_6">
             <property name="text">
-             <string>Sexo</string>
+             <string>Telefone</string>
             </property>
            </widget>
           </item>
-          <item row="7" column="1">
-           <widget class="QLineEdit" name="fone"/>
-          </item>
-          <item row="8" column="0">
-           <widget class="QLabel" name="label_7">
+          <item row="1" column="1">
+           <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>Plano de saúde</string>
+             <string>CPF</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="label_3">
+          <item row="11" column="0">
+           <widget class="QPushButton" name="limpar_btn">
             <property name="text">
-             <string>Idade</string>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="0">
-           <widget class="QPushButton" name="salvar_btn">
-            <property name="text">
-             <string>Salvar</string>
+             <string>Limpar dados</string>
             </property>
            </widget>
           </item>

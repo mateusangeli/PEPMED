@@ -174,7 +174,14 @@
          <widget class="QLineEdit" name="rg"/>
         </item>
         <item row="11" column="1">
-         <widget class="QDateTimeEdit" name="data_consulta"/>
+         <widget class="QDateTimeEdit" name="data_consulta">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+         </widget>
         </item>
         <item row="0" column="1">
          <widget class="QLabel" name="label_3">

@@ -1,5 +1,7 @@
+from sqlite3.dbapi2 import Error
 from classes.paciente import Paciente
 import models.database as db
+import sqlite3
 
 def getPacientes():
     conn = db.connect_db()
@@ -40,10 +42,14 @@ def getPaciente(id):
     return novoPaciente
 
 def editPaciente(paciente):
-    conn = db.connect_db()
-    cursor = conn.cursor()
-    sql = """ UPDATE Paciente SET nome = ?, sexo = ?, idade = ?, cpf = ?, rg = ?, telefone = ?, plano = ? WHERE id = ?"""
-    cursor.execute(sql, [paciente.nome, paciente.sexo, paciente.idade, paciente.cpf, paciente.rg, paciente.telefone, paciente.plano, paciente.id])
+    try: 
+        conn = db.connect_db()
+        cursor = conn.cursor()
+        cursor.execute("PRAGMA foreign_keys = ON;")
+        sql = """ UPDATE Paciente SET nome = ?, sexo = ?, idade = ?, cpf = ?, rg = ?, telefone = ?, plano = ? WHERE id = ?"""
+        cursor.execute(sql, [paciente.nome, paciente.sexo, paciente.idade, paciente.cpf, paciente.rg, paciente.telefone, paciente.plano, paciente.id])
+    except sqlite3.Error as er:
+        print(er)
     conn.commit()
     conn.close()
 
@@ -57,9 +63,13 @@ def addPaciente(paciente):
     conn.close()
 
 def delPaciente(id):
-    conn = db.connect_db()
-    cursor = conn.cursor()
-    sql = """DELETE FROM Paciente WHERE id = ?"""
-    cursor.execute(sql, [id])
+    try:
+        conn = db.connect_db()
+        cursor = conn.cursor()
+        cursor.execute("PRAGMA foreign_keys = ON;")
+        sql = """DELETE FROM Paciente WHERE id = ?"""
+        cursor.execute(sql, [id])
+    except sqlite3.Error as er:
+        print(er)
     conn.commit()
     conn.close()
