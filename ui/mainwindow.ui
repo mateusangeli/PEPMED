@@ -252,6 +252,20 @@
              <normaloff>../icons/cifrao.png</normaloff>../icons/cifrao.png</iconset>
            </property>
           </item>
+          <item>
+           <property name="text">
+            <string>Exame</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../icons/exame.png</normaloff>../icons/exame.png</iconset>
+           </property>
+          </item>
          </widget>
         </item>
         <item>

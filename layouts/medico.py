@@ -23,13 +23,14 @@ class cadMedico(QWidget):
 
     def salvarMedico(self):
         medico = self.verificaCampos()
-        if (medico != None) and (self.medicoAtual == None):
-            self.table.add(medico)
-            self.limpaCampos()
-        else:
-            medico.id = self.medicoAtual.id
-            self.table.atualizar(medico)
-            self.limpaCampos()
+        if medico != None:
+            if self.medicoAtual == None:
+                self.table.add(medico)
+                self.limpaCampos()
+            else:
+                medico.id = self.medicoAtual.id
+                self.table.atualizar(medico)
+                self.limpaCampos()
 
     def verificaCampos(self):
         nome = self.nome.text()

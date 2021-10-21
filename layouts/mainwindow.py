@@ -2,12 +2,14 @@ from PyQt5.QtWidgets import QHBoxLayout, QMainWindow, QListWidgetItem, QWidget, 
 from PyQt5 import uic
 from componentes.table_pacientes import TabelaPaciente
 from layouts.consulta import novaConsulta
+from layouts.exame import novoExame
 
 from layouts.login import cadLogin
 from layouts.paciente import cadPaciente
 from layouts.medico import cadMedico
 from layouts.consulta import novaConsulta
 from layouts.tela_consultas import telaConsultas
+from layouts.exame import novoExame
 
 
 
@@ -31,6 +33,7 @@ class MainWindow(QMainWindow):
         self.stackedWidget.insertWidget(1, cadMedico())
         self.stackedWidget.insertWidget(2, novaConsulta())
         self.stackedWidget.insertWidget(3, telaConsultas(self))
+        self.stackedWidget.insertWidget(4, novoExame())
 
     def iniciarSistema(self):
         self.stackedWidget_geral.setCurrentIndex(1)

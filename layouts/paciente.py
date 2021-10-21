@@ -24,13 +24,14 @@ class cadPaciente(QWidget):
 
     def salvarPaciente(self):
         paciente = self.verificaCampos()
-        if (paciente != None) and (self.pacienteAtual == None) :
-            self.add(paciente)
-            self.limpaCampos()
-        else:
-            paciente.id = self.pacienteAtual.id
-            self.table.atualizar(paciente)
-            self.limpaCampos()
+        if paciente != None:
+            if self.pacienteAtual == None:
+                self.add(paciente)
+                self.limpaCampos()
+            else:
+                paciente.id = self.pacienteAtual.id
+                self.table.atualizar(paciente)
+                self.limpaCampos()
 
             
 

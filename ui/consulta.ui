@@ -209,17 +209,20 @@
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="6" column="0">
-            <widget class="QLabel" name="label_15">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_13">
              <property name="text">
-              <string>Valor</string>
+              <string>Tipo</string>
              </property>
             </widget>
            </item>
-           <item row="2" column="0">
-            <widget class="QLabel" name="label_9">
+           <item row="5" column="0">
+            <widget class="QTextEdit" name="obs"/>
+           </item>
+           <item row="8" column="0">
+            <widget class="QPushButton" name="salvar_consulta">
              <property name="text">
-              <string>Data e hora</string>
+              <string>Marcar consulta</string>
              </property>
             </widget>
            </item>
@@ -230,22 +233,15 @@
              </property>
             </widget>
            </item>
-           <item row="8" column="0">
-            <widget class="QPushButton" name="salvar_consulta">
-             <property name="text">
-              <string>Marcar consulta</string>
+           <item row="7" column="0">
+            <widget class="QLineEdit" name="valor">
+             <property name="readOnly">
+              <bool>true</bool>
              </property>
             </widget>
            </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_13">
-             <property name="text">
-              <string>Tipo</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="0">
-            <widget class="QTextEdit" name="obs"/>
+           <item row="3" column="0">
+            <widget class="QDateTimeEdit" name="data_consulta"/>
            </item>
            <item row="1" column="0">
             <widget class="QComboBox" name="combo_consulta">
@@ -266,15 +262,26 @@
              </item>
             </widget>
            </item>
-           <item row="7" column="0">
-            <widget class="QLineEdit" name="valor">
-             <property name="readOnly">
-              <bool>true</bool>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>Valor</string>
              </property>
             </widget>
            </item>
-           <item row="3" column="0">
-            <widget class="QDateTimeEdit" name="data_consulta"/>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>Data e hora</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>Limpar dados</string>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
