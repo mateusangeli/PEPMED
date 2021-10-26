@@ -24,7 +24,7 @@ def getExames():
 def getExame(id):
     conn = db.connect_db()
     cursor = conn.cursor()
-    sql = """SELECT * FROM Exame WHERE id = ?;"""
+    sql = """SELECT * FROM Exames WHERE id = ?;"""
     cursor.execute(sql, [id])
     e = cursor.fetchall()[0]
     id = e[0]
@@ -40,7 +40,7 @@ def getExame(id):
 def editExame(exame):
     conn = db.connect_db()
     cursor = conn.cursor()
-    sql = """UPDATE Exame SET procedimento = ?, data = ?, valor = ? WHERE id = ?"""
+    sql = """UPDATE Exames SET procedimento = ?, data = ?, valor = ? WHERE id = ?"""
     cursor.execute(sql, [exame.procedimento, exame.data, exame.valor, exame.id])
     conn.commit()
     conn.close()
@@ -48,7 +48,7 @@ def editExame(exame):
 def addExame(exame):
     conn = db.connect_db()
     cursor = conn.cursor()
-    sql = """INSERT INTO Exame (procedimento, data, valor, id_paciente) VALUES (?, ?, ?, ?);"""
+    sql = """INSERT INTO Exames (procedimento, data, valor, id_paciente) VALUES (?, ?, ?, ?);"""
     cursor.execute(sql, [exame.procedimento, exame.data, exame.valor, exame.paciente.id])
     conn.commit()
     conn.close()
@@ -56,7 +56,7 @@ def addExame(exame):
 def delExame(id):
     conn = db.connect_db()
     cursor = conn.cursor()
-    sql = """DELETE FROM Exame WHERE id = ?"""
+    sql = """DELETE FROM Exames WHERE id = ?"""
     cursor.execute(sql, [id])
     conn.commit()
     conn.close()

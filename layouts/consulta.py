@@ -23,19 +23,15 @@ class novaConsulta(QWidget):
         self.consultaAtual = None
         self.carregaDadosMedico()
         self.carregaDadosPaciente()
-        self.carregaDadosConsulta()
         self.salvar_consulta.clicked.connect(self.salvarConsulta)       
         self.combo_paciente.currentIndexChanged.connect(self.index_changed_paciente)
         self.combo_medico.currentIndexChanged.connect(self.index_changed_medico)
         self.combo_consulta.currentIndexChanged.connect(self.valorTotal)
+        self.limpar_btn.clicked.connect(self.limparTodosCampos)
         self.cancel_btn.clicked.connect(self.excluir)
         self.valorTotal(0)
         self.combo_paciente.setCurrentIndex(0)
         self.combo_medico.setCurrentIndex(0)
-        
-
-    def carregaDadosConsulta(self):
-        self.lista_consultas = CoModels.getConsultas()
 
     def carregaDadosMedico(self):
         self.lista_medicos = MeModels.getMedicos()
@@ -145,8 +141,10 @@ class novaConsulta(QWidget):
 
 
     def excluir(self):
-        CoModels.delConsulta(self.consultaAtual.id)
-        self.carregaDadosConsulta()
+        self.table.excluir(self.consultaAtual.id)
+        self.limparTodosCampos()
+        
+
 
     def limpaCampos(self):
         self.consultaAtual = None
@@ -157,19 +155,28 @@ class novaConsulta(QWidget):
         self.cancel_btn.setEnabled(False)
 
     def limpaCamposPaciente(self):
+        self.combo_paciente.setCurrentIndex(0)
         self.id_paciente.setText("")
         self.fone_paciente.setText("")
         self.idade_paciente.setText("")
 
     def limpaCamposMedico(self):
+        self.combo_medico.setCurrentIndex(0)
         self.id_medico.setText("")
         self.fone_medico.setText("")
         self.area_medico.setText("")
 
     def limparCamposConsulta(self):
+        self.combo_consulta.setCurrentIndex(0)
         self.data_consulta.setDate(QDate.currentDate())
         self.obs.clear()
         self.valor.setText("")
+
+    def limparTodosCampos(self):
+        self.limparCamposConsulta()
+        self.limpaCamposMedico()
+        self.limpaCamposPaciente()
+        self.limpaCampos()
 
 
         

@@ -57,6 +57,10 @@ class TabelaConsulta():
 
     def atualizar(self, consulta):
         CoModels.editConsulta(consulta)
-        self.carregaDados()      
+        self.carregaDados()   
+
+    def excluir(self, id):
+        CoModels.delConsulta(id)
+        self.carregaDados()
 
 

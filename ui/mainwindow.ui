@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget_geral">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page">
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -113,7 +113,7 @@
                  </widget>
                 </item>
                 <item row="0" column="1">
-                 <widget class="QLineEdit" name="lineEdit"/>
+                 <widget class="QLineEdit" name="login_user"/>
                 </item>
                 <item row="1" column="0">
                  <widget class="QLabel" name="label_2">
@@ -123,7 +123,7 @@
                  </widget>
                 </item>
                 <item row="1" column="1">
-                 <widget class="QLineEdit" name="lineEdit_2"/>
+                 <widget class="QLineEdit" name="senha_user"/>
                 </item>
                 <item row="3" column="0" colspan="2">
                  <widget class="QPushButton" name="entrar_btn">
@@ -469,7 +469,7 @@
  </widget>
  <tabstops>
   <tabstop>nome</tabstop>
-  <tabstop>lineEdit_2</tabstop>
+  <tabstop>senha_user</tabstop>
   <tabstop>entrar_btn</tabstop>
   <tabstop>cad_btn</tabstop>
   <tabstop>confirmar_btn</tabstop>
@@ -478,7 +478,7 @@
   <tabstop>combo_tipo</tabstop>
   <tabstop>senha</tabstop>
   <tabstop>usuario</tabstop>
-  <tabstop>lineEdit</tabstop>
+  <tabstop>login_user</tabstop>
  </tabstops>
  <resources/>
  <connections/>

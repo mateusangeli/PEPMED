@@ -10,6 +10,8 @@ from layouts.medico import cadMedico
 from layouts.consulta import novaConsulta
 from layouts.tela_consultas import telaConsultas
 from layouts.exame import novoExame
+from layouts.tela_exames import telaExames
+import models.usuario_models as UsModels
 
 
 
@@ -24,7 +26,8 @@ class MainWindow(QMainWindow):
         self.listWidget.currentRowChanged.connect(self.display)
         self.log_btn.clicked.connect(self.login)
         self.cad_btn.clicked.connect(self.cadastro)
-        self.entrar_btn.clicked.connect(self.iniciarSistema)
+        self.entrar_btn.clicked.connect(self.verificaSenha)
+        self.lista_users = []
         self.janela_cadLogin = cadLogin(self)
         self.carregaJanelas()
 
@@ -33,7 +36,8 @@ class MainWindow(QMainWindow):
         self.stackedWidget.insertWidget(1, cadMedico())
         self.stackedWidget.insertWidget(2, novaConsulta())
         self.stackedWidget.insertWidget(3, telaConsultas(self))
-        self.stackedWidget.insertWidget(4, novoExame())
+        self.stackedWidget.insertWidget(4, telaExames())
+
 
     def iniciarSistema(self):
         self.stackedWidget_geral.setCurrentIndex(1)
@@ -49,5 +53,14 @@ class MainWindow(QMainWindow):
         self.carregaJanelas()
         self.stackedWidget.setCurrentIndex(index)
         self.listWidget.setCurrentRow(index)
+
+    def verificaSenha(self):
+        login_user = self.login_user.text()
+        senha_user = self.senha_user.text()
+        self.lista_users = UsModels.getUsuario(login_user, senha_user)
+        if len(self.lista_users) > 0:
+            self.iniciarSistema()
+        else:
+            self.statusBar().showMessage(str("Usuário ou senha incorreto, tente novamente!"), 5000)
 
 

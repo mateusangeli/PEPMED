@@ -277,7 +277,7 @@
             </widget>
            </item>
            <item row="9" column="0">
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="limpar_btn">
              <property name="text">
               <string>Limpar dados</string>
              </property>
