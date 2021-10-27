@@ -20,16 +20,20 @@ class cadMedico(QWidget):
 
     def carregaDados(self):
         self.lista_medicos = MeModels.getMedicos()
+        self.excluir_btn.setEnabled(False)
+        self.limpar_btn.setEnabled(False)
 
     def salvarMedico(self):
         medico = self.verificaCampos()
         if medico != None:
             if self.medicoAtual == None:
                 self.table.add(medico)
+                self.table.carregaDados()
                 self.limpaCampos()
             else:
                 medico.id = self.medicoAtual.id
                 self.table.atualizar(medico)
+                self.table.carregaDados()
                 self.limpaCampos()
 
     def verificaCampos(self):

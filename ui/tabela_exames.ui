@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../icons/exame.png</normaloff>../icons/exame.png</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
@@ -61,7 +65,7 @@
    <item>
     <widget class="QPushButton" name="marcar_btn">
      <property name="text">
-      <string>Marcar consulta</string>
+      <string>Marcar exame</string>
      </property>
     </widget>
    </item>

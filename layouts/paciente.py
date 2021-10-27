@@ -21,16 +21,20 @@ class cadPaciente(QWidget):
 
     def carregaDados(self):
         self.lista_pacientes = PaModels.getPacientes()
+        self.excluir_btn.setEnabled(False)
+        self.limpar_btn.setEnabled(False)
 
     def salvarPaciente(self):
         paciente = self.verificaCampos()
         if paciente != None:
             if self.pacienteAtual == None:
                 self.add(paciente)
+                self.table.carregaDados()
                 self.limpaCampos()
             else:
                 paciente.id = self.pacienteAtual.id
                 self.table.atualizar(paciente)
+                self.table.carregaDados()
                 self.limpaCampos()
 
             
@@ -47,6 +51,7 @@ class cadPaciente(QWidget):
 
         if ((nome != "") and (sexo != "") and (idade != "") and (cpf != "") and (rg != "") and (telefone != "") and (plano != "")):
             return Paciente(-1, nome, sexo, idade, cpf, rg, telefone, plano)
+            
         return None
 
     def insereInfo(self, paciente):
@@ -77,7 +82,8 @@ class cadPaciente(QWidget):
 
     def excluir(self):
         PaModels.delPaciente(self.pacienteAtual.id)
-        self.carregaDados()
+        self.limpaCampos()
+        self.table.carregaDados()
 
     def limpaCampos(self):
         self.pacienteAtual = None
@@ -88,7 +94,7 @@ class cadPaciente(QWidget):
         self.fone.setText("")
         self.salvar_btn.setText("Salvar")
         self.excluir_btn.setEnabled(False)
-        self.limpar_btn.setEnabled(True)
+        self.limpar_btn.setEnabled(False)
 
 
 

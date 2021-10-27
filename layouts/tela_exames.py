@@ -33,7 +33,8 @@ class telaExames(QWidget):
         paciente = QTableWidgetItem(exames.paciente.nome)
         data = QTableWidgetItem(exames.data)
         data.setTextAlignment(Qt.AlignCenter)
-        valor = QTableWidgetItem(exames.valor)
+        valorTotal = "R$" + (str(float(exames.valor)))
+        valor = QTableWidgetItem(valorTotal)
         valor.setTextAlignment(Qt.AlignCenter)
 
 

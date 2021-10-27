@@ -25,7 +25,11 @@
         <item>
          <layout class="QGridLayout" name="gridLayout">
           <item row="2" column="1">
-           <widget class="QLineEdit" name="cpf"/>
+           <widget class="QLineEdit" name="cpf">
+            <property name="inputMask">
+             <string>###.###.###-##</string>
+            </property>
+           </widget>
           </item>
           <item row="3" column="1">
            <widget class="QLabel" name="label_5">
@@ -35,7 +39,11 @@
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QLineEdit" name="rg"/>
+           <widget class="QLineEdit" name="rg">
+            <property name="inputMask">
+             <string>##########</string>
+            </property>
+           </widget>
           </item>
           <item row="9" column="0">
            <widget class="QComboBox" name="combo_plano">
@@ -97,7 +105,11 @@
            </widget>
           </item>
           <item row="7" column="1">
-           <widget class="QLineEdit" name="fone"/>
+           <widget class="QLineEdit" name="fone">
+            <property name="inputMask">
+             <string>(##)#####-####</string>
+            </property>
+           </widget>
           </item>
           <item row="4" column="0">
            <widget class="QComboBox" name="combo_sexo">
@@ -114,7 +126,11 @@
            </widget>
           </item>
           <item row="7" column="0">
-           <widget class="QLineEdit" name="idade"/>
+           <widget class="QLineEdit" name="idade">
+            <property name="inputMask">
+             <string>##</string>
+            </property>
+           </widget>
           </item>
           <item row="6" column="1">
            <widget class="QLabel" name="label_6">
@@ -166,7 +182,7 @@
       <item>
        <widget class="QLabel" name="label_9">
         <property name="text">
-         <string>Clientes cadastrados</string>
+         <string>Pacientes cadastrados</string>
         </property>
        </widget>
       </item>

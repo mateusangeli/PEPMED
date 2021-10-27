@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>876</width>
-    <height>647</height>
+    <height>711</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -38,10 +38,18 @@
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QLineEdit" name="rg"/>
+           <widget class="QLineEdit" name="rg">
+            <property name="inputMask">
+             <string>##########</string>
+            </property>
+           </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="cpf"/>
+           <widget class="QLineEdit" name="cpf">
+            <property name="inputMask">
+             <string>###.###.###-##</string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label">
@@ -68,10 +76,18 @@
            </widget>
           </item>
           <item row="7" column="0">
-           <widget class="QLineEdit" name="idade"/>
+           <widget class="QLineEdit" name="idade">
+            <property name="inputMask">
+             <string>##</string>
+            </property>
+           </widget>
           </item>
           <item row="7" column="1">
-           <widget class="QLineEdit" name="telefone"/>
+           <widget class="QLineEdit" name="telefone">
+            <property name="inputMask">
+             <string>(##)#####-####</string>
+            </property>
+           </widget>
           </item>
           <item row="8" column="1">
            <widget class="QPushButton" name="excluir_btn">
@@ -140,7 +156,7 @@
       <item>
        <widget class="QLabel" name="label_9">
         <property name="text">
-         <string>Clientes cadastrados</string>
+         <string>Médicos cadastrados</string>
         </property>
        </widget>
       </item>

@@ -148,7 +148,7 @@ class novaConsulta(QWidget):
 
     def limpaCampos(self):
         self.consultaAtual = None
-        self.data_consulta.setDate(QDate.currentDate())
+        self.data_consulta.setDateTime(QDateTime.currentDateTime())
         self.obs.clear()
         self.valor.setText("")
         self.salvar_consulta.setText("Salvar consulta")
@@ -168,7 +168,7 @@ class novaConsulta(QWidget):
 
     def limparCamposConsulta(self):
         self.combo_consulta.setCurrentIndex(0)
-        self.data_consulta.setDate(QDate.currentDate())
+        self.data_consulta.setDateTime(QDateTime.currentDateTime())
         self.obs.clear()
         self.valor.setText("")
 

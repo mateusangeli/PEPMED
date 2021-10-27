@@ -49,6 +49,9 @@
            </item>
            <item row="6" column="0">
             <widget class="QLineEdit" name="fone_paciente">
+             <property name="inputMask">
+              <string>(##)#####-####</string>
+             </property>
              <property name="readOnly">
               <bool>true</bool>
              </property>
@@ -77,6 +80,9 @@
            </item>
            <item row="8" column="0">
             <widget class="QLineEdit" name="idade_paciente">
+             <property name="inputMask">
+              <string>##</string>
+             </property>
              <property name="readOnly">
               <bool>true</bool>
              </property>
@@ -171,6 +177,9 @@
            </item>
            <item row="5" column="0">
             <widget class="QLineEdit" name="fone_medico">
+             <property name="inputMask">
+              <string>(##)#####-####</string>
+             </property>
              <property name="readOnly">
               <bool>true</bool>
              </property>
