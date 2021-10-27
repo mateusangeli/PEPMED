@@ -37,10 +37,8 @@ class novoExame(QWidget):
         else:
             self.pacienteAtual = self.lista_pacientes[i-1]
             self.cpf.setText(self.pacienteAtual.cpf)
-            if self.pacienteAtual.plano == 'Sim':
-                self.combo_plano.setCurrentIndex(1)
-            else: 
-                self.combo_plano.setCurrentIndex(2)
+            self.combo_plano.setText(self.pacienteAtual.plano)
+
 
     def marcarConsulta(self):
         procedimento = self.combo_procedimento.currentText()
@@ -56,7 +54,7 @@ class novoExame(QWidget):
 
     def limparCampos(self):
         self.cpf.setText("")
-        self.combo_plano.setCurrentIndex(0)
+        self.combo_plano.setText("")
         self.combo_paciente.setCurrentIndex(0)
         self.combo_procedimento.setCurrentIndex(0)
         self.data_exame.setDateTime(QDateTime.currentDateTime())
