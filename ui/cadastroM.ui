@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>876</width>
-    <height>711</height>
+    <height>713</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -162,6 +162,15 @@
       </item>
       <item>
        <widget class="QTableWidget" name="tableWidget">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
         <column>
          <property name="text">
           <string>ID</string>

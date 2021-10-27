@@ -32,6 +32,8 @@ class novaConsulta(QWidget):
         self.valorTotal(0)
         self.combo_paciente.setCurrentIndex(0)
         self.combo_medico.setCurrentIndex(0)
+        self.limpar_btn.setEnabled(False)
+        self.cancel_btn.setEnabled(False)
 
     def carregaDadosMedico(self):
         self.lista_medicos = MeModels.getMedicos()
@@ -74,11 +76,11 @@ class novaConsulta(QWidget):
         if consulta != None:
             if self.consultaAtual == None:            
                 self.table.add(consulta)
-                self.limpaCampos()
+                self.limparTodosCampos()
             else:
                 consulta.id = self.consultaAtual.id
                 self.table.atualizar(consulta)
-                self.limpaCampos()
+                self.limparTodosCampos()
 
 
     def verificaCampos(self):
@@ -137,6 +139,7 @@ class novaConsulta(QWidget):
         self.data_consulta.setDateTime(data)
 
         self.salvar_consulta.setText("Atualizar consulta")
+        self.limpar_btn.setEnabled(True)
         self.cancel_btn.setEnabled(True)
 
 
@@ -177,7 +180,10 @@ class novaConsulta(QWidget):
         self.limpaCamposMedico()
         self.limpaCamposPaciente()
         self.limpaCampos()
-
+        self.combo_paciente.setEnabled(True)
+        self.combo_medico.setEnabled(True)
+        self.combo_plano.setEnabled(True)
+        self.limpar_btn.setEnabled(False)
 
         
 
